@@ -1,0 +1,17 @@
+create database tmf_restaurant;
+use tmf_restaurant;
+create table restaurant(res_id int,res_name varchar(50),address varchar(50),location varchar(50),open_time varchar(50),close_time varchar(50),gst_number int,contact_number int,email varchar(50),avg_rating float,primary key(res_id));
+select * from restaurant;
+
+insert into restaurant values(101,"Spice Route","vishakapatnam","madhrawada","10am","10pm",45232,898365465,"malik@gmail.com",4.0,1011);
+
+--------------------------------------------------------------------------------------
+use tmf_restaurant;
+create table foodDish(food_id int,food_item_name varchar(50),price_per_quantity int,food_description varchar(400),is_nonveg varchar(50),is_veg varchar(50),avg_rating float,cuisin_id int,res_id int,primary key(food_id),foreign key(res_id) references restaurant(res_id));
+insert into foodDish values(201,"Chilli chicken","200","Delicious","yes","No",3.8,991,101);
+insert into foodDish values(202,"Biriyani Dum","300","Delicious","yes","No",4,992,102);
+insert into foodDish values(203,"Fry Biriyani","300","Delicious","yes","No",4,993,103);
+insert into foodDish values(204,"Chilli chicken","200","Delicious","yes","No",3.8,991,102);
+insert into foodDish values(205,"Biriyani Dum","300","Delicious","yes","No",4,992,101);
+insert into foodDish values(206,"Fry Biriyani","300","Delicious","yes","No",4,993,101);
+select * from foodDish;
